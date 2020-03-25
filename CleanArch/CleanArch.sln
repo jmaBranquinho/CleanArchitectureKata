@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArch.Infra.Data", "Cle
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArch.Application", "CleanArch.Application\CleanArch.Application.csproj", "{C6FA32F8-B84E-4C60-85D6-C6DEC4A8E53A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArch.Ingra.IoC", "CleanArch.Ingra.IoC\CleanArch.Ingra.IoC.csproj", "{CD2CADBD-9EA8-44EB-B14B-422E797CACA5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArch.Infra.IoC", "CleanArch.Ingra.IoC\CleanArch.Infra.IoC.csproj", "{CD2CADBD-9EA8-44EB-B14B-422E797CACA5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
