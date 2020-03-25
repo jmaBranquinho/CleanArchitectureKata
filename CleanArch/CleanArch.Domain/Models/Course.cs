@@ -1,4 +1,4 @@
-﻿namespace CleanArch.Domain.Entities
+﻿namespace CleanArch.Domain.Models
 {
     public class Course
     {

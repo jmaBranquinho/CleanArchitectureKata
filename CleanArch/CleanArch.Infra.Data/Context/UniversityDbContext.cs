@@ -1,4 +1,4 @@
-﻿using CleanArch.Domain.Entities;
+﻿using CleanArch.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace CleanArch.Infra.Data.Context
