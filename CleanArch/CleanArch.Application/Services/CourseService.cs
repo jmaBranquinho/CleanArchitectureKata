@@ -1,6 +1,6 @@
 ﻿using CleanArch.Application.Interfaces;
 using CleanArch.Application.ViewModels;
-using CleanArch.Domain.Models.Interfaces;
+using CleanArch.Domain.Interfaces;
 
 namespace CleanArch.Application.Services
 {
