@@ -1,8 +1,7 @@
+using CleanArch.Application.ViewModels;
 using CleanArch.Infra.Data.Context;
 using CleanArch.Infra.IoC;
-using CleanArch.Mvc.Configurations;
 using CleanArch.Mvc.Data;
-using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -15,16 +14,20 @@ namespace CleanArch.Mvc
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public IConfiguration Configuration { get; }
+        public IWebHostEnvironment Environment { get; set; }
+
+        public Startup(IConfiguration configuration, IWebHostEnvironment environment)
         {
             Configuration = configuration;
+            Environment = environment;
         }
 
-        public IConfiguration Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Inject Layers
+            services.AddApplication();
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("UniversityIdentityDbConnection")));
@@ -37,10 +40,6 @@ namespace CleanArch.Mvc
             {
                 options.UseSqlServer(Configuration.GetConnectionString("UniversityDBConnection"));
             });
-
-            services.AddMediatR(typeof(Startup));
-
-            services.RegisterAutoMapper();
 
             RegisterServices(services);
         }

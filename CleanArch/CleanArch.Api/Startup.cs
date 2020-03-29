@@ -1,7 +1,6 @@
-using CleanArch.Api.Configurations;
+using CleanArch.Application.ViewModels;
 using CleanArch.Infra.Data.Context;
 using CleanArch.Infra.IoC;
-using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +23,9 @@ namespace CleanArch.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Inject Layers
+            services.AddApplication();
+
             services.AddDbContext<UniversityDbContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("UniversityDBConnection"));
@@ -35,10 +37,6 @@ namespace CleanArch.Api
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "University Api", Version = "v1" });
             });
-
-            services.AddMediatR(typeof(Startup));
-
-            services.RegisterAutoMapper();
 
             RegisterServices(services);
         }

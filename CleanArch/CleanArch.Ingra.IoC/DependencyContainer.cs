@@ -1,6 +1,5 @@
 ﻿using CleanArch.Application.Interfaces;
 using CleanArch.Application.Services;
-using CleanArch.Domain.CommandHandlers;
 using CleanArch.Domain.Commands;
 using CleanArch.Domain.Core.Bus;
 using CleanArch.Domain.Interfaces;
@@ -9,6 +8,7 @@ using CleanArch.Infra.Data.Context;
 using CleanArch.Infra.Data.Repositories;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+using static CleanArch.Domain.Commands.CreateCourseCommand;
 
 namespace CleanArch.Infra.IoC
 {
